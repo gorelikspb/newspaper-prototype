@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прототип Газеты</title>
+    <!-- Подключение Bootstrap CSS из CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+        .hero {
+            background: url('https://via.placeholder.com/1200x400') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+        }
+        .lang-switcher button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#" id="siteTitle">Газета</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" id="navHome">Главная <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="navAbout">О нас</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="navNews">Новости</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="navContact">Контакт</a>
+                </li>
+            </ul>
+            <div class="ml-auto lang-switcher">
+                <span id="langLabel">Язык:</span>
+                <button class="btn btn-outline-light btn-sm" onclick="setLanguage('ru')">RU</button>
+                <button class="btn btn-outline-light btn-sm" onclick="setLanguage('de')">DE</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главный баннер -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="display-4" id="heroTitle">Добро пожаловать в нашу газету</h1>
+            <p class="lead" id="heroSubtitle">Актуальные новости и аналитика из первых уст</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <section class="section">
+            <h2 class="text-center" id="newsTitle">Последние новости</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" id="newsTitle1">Заголовок новости 1</h5>
+                            <p class="card-text" id="newsText1">Краткое описание новости. Информация об актуальных событиях.</p>
+                            <a href="#" class="btn btn-primary" id="readMore1">Читать далее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" id="newsTitle2">Заголовок новости 2</h5>
+                            <p class="card-text" id="newsText2">Краткое описание новости. Информация об актуальных событиях.</p>
+                            <a href="#" class="btn btn-primary" id="readMore2">Читать далее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" id="newsTitle3">Заголовок новости 3</h5>
+                            <p class="card-text" id="newsText3">Краткое описание новости. Информация об актуальных событиях.</p>
+                            <a href="#" class="btn btn-primary" id="readMore3">Читать далее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p id="footerText">&copy; 2024 Газета. Все права защищены.</p>
+    </footer>
+
+    <!-- Подключение Bootstrap JS из CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Ваш скрипт переключения языка -->
+    <script>
+        const translations = {
+            ru: {
+                siteTitle: "Газета",
+                navHome: "Главная",
+                navAbout: "О нас",
+                navNews: "Новости",
+                navContact: "Контакт",
+                heroTitle: "Добро пожаловать в нашу газету",
+                heroSubtitle: "Актуальные новости и аналитика из первых уст",
+                newsTitle: "Последние новости",
+                newsTitle1: "Заголовок новости 1",
+                newsText1: "Краткое описание новости. Информация об актуальных событиях.",
+                readMore1: "Читать далее",
+                newsTitle2: "Заголовок новости 2",
+                newsText2: "Краткое описание новости. Информация об актуальных событиях.",
+                readMore2: "Читать далее",
+                newsTitle3: "Заголовок новости 3",
+                newsText3: "Краткое описание новости. Информация об актуальных событиях.",
+                readMore3: "Читать далее",
+                footerText: "&copy; 2024 Газета. Все права защищены."
+            },
+            de: {
+                siteTitle: "Zeitung",
+                navHome: "Startseite",
+                navAbout: "Über uns",
+                navNews: "Nachrichten",
+                navContact: "Kontakt",
+                heroTitle: "Willkommen bei unserer Zeitung",
+                heroSubtitle: "Aktuelle Nachrichten und Analysen aus erster Hand",
+                newsTitle: "Neueste Nachrichten",
+                newsTitle1: "Nachrichtenschlagzeile 1",
+                newsText1: "Kurze Beschreibung der Nachricht. Informationen zu aktuellen Ereignissen.",
+                readMore1: "Weiterlesen",
+                newsTitle2: "Nachrichtenschlagzeile 2",
+                newsText2: "Kurze Beschreibung der Nachricht. Informationen zu aktuellen Ereignissen.",
+                readMore2: "Weiterlesen",
+                newsTitle3: "Nachrichtenschlagzeile 3",
+                newsText3: "Kurze Beschreibung der Nachricht. Informationen zu aktuellen Ereignissen.",
+                readMore3: "Weiterlesen",
+                footerText: "&copy; 2024 Zeitung. Alle Rechte vorbehalten."
+            }
+        };
+
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[id]');
+            elements.forEach(el => {
+                const id = el.id;
+                if (translations[lang][id]) {
+                    el.innerHTML = translations[lang][id];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
